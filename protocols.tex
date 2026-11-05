@@ -81,12 +81,17 @@ We should also be able to obtain a positive control that enzymatic synthesis can
     \item Set a specific voltage on either the liquid gate or on the channels themselves using the source measure unit (SMU). Start with a lower voltage and gradually increase, staying within the safe range of up to 1.2V.
     \item Flow an alternating sequence of A, T, G, C across the chip surface. Use approximately 50µL of each base and ensure that the channels leading up to the chip surface are properly flushed.
     \item Incubate the system for a duration that optimizes the enzymatic synthesis. The time period could vary between 1 to 10 minutes.
-    \item Apply an enzymatic cleavage step using EcoRI.
+    \item Inactivate and remove the terminal deoxynucleotidyl transferase (TdT) before release, so that it cannot continue extending the released products in the collected wash.
     \begin{enumerate} %[i.]
-        \item Add the ssDNA primer complimentary to the sequence and the EcoRI as a single mix.
-        \item Incubate the system to allow the enzyme to cleave the synthesized products from the surface of the GFET.
+        \item Wash the channels with buffer to remove residual TdT and dNTPs.
+        \item Heat-inactivate at 70--75 °C for 10 minutes (or quench with EDTA), then exchange into HindIII reaction buffer (Mg$^{2+}$, Co$^{2+}$-free).
     \end{enumerate}
-    \item Collect the wash from this final step (approximately 50-100µL) and analyze it using capillary electrophoresis or nanopore sequencing to observe the length distribution of the synthesized DNA molecules.
+    \item Form the duplex required for cleavage and cleave the products from the surface using HindIII.
+    \begin{enumerate} %[i.]
+        \item Flow the 5'-fluorophore-labelled complement (5'-GACCTACATCCTAAGCTTGCCTG-3') over the chip and anneal with a temperature ramp: approximately 65 °C, then slow cooling to 37 °C. A 37 °C soak alone will not anneal a 23 nt complement at nanomolar concentration on a practical timescale.
+        \item Flow HindIII and incubate at 37 °C to cleave the synthesized products from the surface of the GFET.
+    \end{enumerate}
+    \item Collect the wash from this final step (approximately 50-100µL) and analyze it using capillary electrophoresis or nanopore sequencing to observe the length distribution of the synthesized DNA molecules. The cut is internal (between nt 13 and 14 of the template), so the no-synthesis control is a 37 nt product and synthesis shifts the distribution to 37 + $n$ nt.
 \end{enumerate}
 
 \section*{Protocol 2: Specifying the order of incorporated DNA bases}
@@ -108,13 +113,28 @@ In this case we might apply both capillary electrophoresis and DNA sequencing to
     \item Flow a cyclic sequence of A, T, G, C across the chip surface. Use approximately 50µL of each base.
     \item Modulate the electrical state on the GFETs to match the flow using a programmable source measure unit (SMU). The state should prevent synthesis during all but one of the bases in each set.
     \item Incubate the system for a duration that optimizes the enzymatic synthesis. The time period could vary between 1 to 10 minutes.
-    \item After incubation, apply an enzymatic cleavage step using EcoRI.
-    \begin{enumerate} %[i.]
-        \item Add the ssDNA primer complimentary to the sequence and the EcoRI as a single mix.
-        \item Incubate the system to allow the enzyme to cleave the synthesized products from the surface of the GFET.
-    \end{enumerate}
-    \item Collect the wash from this final step (approximately 50-100µL). Analyze the wash using capillary electrophoresis and DNA
+    \item After incubation, inactivate and remove TdT, anneal the complement and cleave with HindIII, following step 5 of Protocol 1.
+    \item Collect the wash from this final step (approximately 50-100µL). Analyze the wash using capillary electrophoresis and DNA sequencing to confirm the intended sequence pattern.
 \end{enumerate}
+
+\section*{Release chemistry: duplex formation and internal HindIII cleavage}
+
+The template oligonucleotide is single-stranded when it is tethered to the graphene and throughout TdT extension, because TdT requires a single-stranded 3' hydroxyl to extend.
+The release step therefore has to create a short duplex around the restriction site on demand.
+We use HindIII, which cuts the internal site AAGCTT at positions 13--18 of the 50\,nt template and is inactive on single-stranded DNA, and therefore requires that the complementary oligonucleotide \texttt{HR3comp} be annealed before digestion.
+We deliberately do not use the Type IIS sites present in the template (Esp3I/BsmBI, Eco31I/BsaI) for the release step: their reported activity on single-stranded DNA is none (BsaI) or at best partial (BsmBI), and FokI requires a duplex recognition site together with dimerization to cleave.
+They remain useful for nested cuts made \emph{in solution} on the released product once it is duplexed.
+
+Because the 5' end of the template is nt 1 and the HindIII cut falls between nt 13 and 14, the released molecule is the 37\,nt downstream fragment plus whatever TdT has appended, with a 4\,nt 5'-AGCT overhang from the staggered cut.
+The no-synthesis control is therefore a 37\,nt species, and synthesis moves the product to 37 + $n$\,nt.
+
+\texttt{HR3comp}: 5'-GACCTACATCCTAAGCTTGCCTG-3' (23\,nt, T$_m$ $\approx$ 57 °C), annealing to nt 8--30 of the template, 5'-fluorophore labelled.
+Carrying the label on the complement means the released product inherits a fluorophore and can be detected directly by capillary electrophoresis, and the fluorescence recovered in the wash doubles as a release-efficiency control.
+If the complement is instead pre-annealed before TdT extension, its own 3' end must be blocked (3'-dideoxy, 3'-phosphate or inverted dT), because a free 3' end is itself a TdT substrate.
+
+Two further requirements follow from this design.
+First, TdT must be inactivated and washed out before release, otherwise it continues to extend the released fragments in the collected wash and smears the length distribution; note that this also makes a failed release indistinguishable from blocked synthesis unless a release control is included.
+Second, the TdT reaction is normally run in Co$^{2+}$ buffer, which must be exchanged for a Mg$^{2+}$ HindIII buffer, since Co$^{2+}$ inhibits HindIII and can relax its specificity.
 
 \section*{Reagents Required for Protocols}
 
@@ -122,13 +142,13 @@ We require at least 10 separate reagents for these protocols (note the four type
 For flexibility, the system should contain 16 reservoirs.
 
 \begin{enumerate}
-    \item Single-stranded DNA template molecules with a 5' amine group and a recognition site for EcoRI.
+    \item Single-stranded DNA template molecules with a 5' amine group and an internal HindIII recognition site (AAGCTT at nt 13--18 of the 50 nt template).
     \item Pyrenebutyric acid N-hydroxysuccinimide ester (PBASE).
     \item Buffer solution for rinsing the chip and for dilution of reagents as required.
     \item Deoxynucleotide triphosphates (dNTPs): dATP, dTTP, dGTP, and dCTP.
     \item Terminal deoxynucleotidyl transferase (TdT).
-    \item EcoRI restriction enzyme.
-    \item Single-stranded DNA primer complementary to the recognition site for EcoRI.
+    \item HindIII restriction enzyme, with 10x HindIII reaction buffer (Mg$^{2+}$, Co$^{2+}$-free).
+    \item Single-stranded DNA primer complementary to the HindIII site and its flanking sequence, 5' fluorophore labelled (\texttt{HR3comp}: 5'-GACCTACATCCTAAGCTTGCCTG-3').
 \end{enumerate}
 
 \section*{Graphene Functionalization Protocol}
@@ -143,6 +163,8 @@ This section outlines the step-by-step protocol for functionalizing graphene wit
     \item N,N-Dimethylformamide (DMF), anhydrous
     \item single-stranded DNA (ssDNA) with a 5' amine group (in 1x PBS @ 26.9 µM)
     \item ssDNA with 5' fluorophore (in 1x PBS @ 100 µM) (for verification)
+    \item HindIII restriction enzyme and 10x HindIII reaction buffer (Mg$^{2+}$) (for DNA release)
+    \item Release complement \texttt{HR3comp} (5'-GACCTACATCCTAAGCTTGCCTG-3'), 5' fluorophore labelled (for DNA release)
     \item Ethanolamine, reagent grade, MW: 61.08 g/mol
     \item Phosphate-buffered saline (PBS) or appropriate buffer solution
     \item Deionized water
