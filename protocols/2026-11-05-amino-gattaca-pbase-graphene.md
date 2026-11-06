@@ -4,6 +4,11 @@
 **Status:** Proposed starting protocol; not yet experimentally validated on this chip.  
 **Target:** 1 µM amino-gattaca (15.57 ng/µL) for **60 min** at room temperature, rinse, then block with **100 mM ethanolamine, pH 9.0, for 30 min**.
 
+**The two batches actually made:**
+
+- **DNA:** a 10 µL draw of the 26.9 µM stock into 259 µL of 1× PBS = **269 µL at 1.00 µM = 15.57 ng/µL**.
+- **Block:** a **1 mL** batch of 100 mM ethanolamine, pH 9.0, mixed from **234 µL water + 6.1 µL ethanolamine 99% + 760 µL of 0.1 M HCl** added last and slowly, with no pH meter.
+
 Prerequisite: [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md).
 
 ## Reagents and stock data
