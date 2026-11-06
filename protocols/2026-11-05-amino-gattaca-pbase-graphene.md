@@ -86,11 +86,13 @@ Ethanolamine stock: melts at 10.3 °C, so do not refrigerate; hygroscopic and ab
 2. **Keep the surface wet until the very last step.** A droplet left to evaporate deposits its salt at the perimeter as a ring, which is the classic artifact here. Remove the final water and dry immediately with a gentle stream of clean nitrogen rather than letting it air-dry.
 3. Rinse the **edges** deliberately; that is where droplets accumulate and where salt survives.
 4. Check after drying: white crystalline patches mean residual salt, and more water exchanges are needed. A faint, uniform change in contrast is what a DNA layer looks like.
-5. **Liquid AFM is better if the instrument allows it.** Image in PBS and skip the water entirely: it avoids drying artifacts, salt residue and any conformational collapse of the DNA on drying.
+5. **Dry AFM is the only option here, so the drying itself is part of the experiment.** Tap in air rather than contact mode, since contact mode can drag soft nucleic acid layers. Image soon after drying rather than leaving the chip in air for days, and keep it in a desiccator with nitrogen if it must wait.
 
 Water does not strip the DNA, because the attachment is covalent. It *will* remove non-specifically adsorbed DNA, which is exactly what you want on the bare-graphene control. Rinsing with water before a dry AFM measurement is also the published practice: Ping et al. rinsed with DI water and nitrogen-dried before resolving a ~1.2 nm height increase for a 22-mer, and Huang et al. washed with DMF and DI water before imaging coverage.
 
-**For immediate liquid work**, leave the chip in the next step's buffer and skip the water entirely.
+**What to expect, and what will not work.** At 1 µM the published coverage is dense enough that individual molecules are not resolvable: Ping et al. report exactly this for 1 µM probe DNA, where the layer is uniform and only the average height (~1.2 nm for a 22-mer) is measurable. So the 1 µM chip answers "did a layer attach", not "how many molecules attached". A 50-mer is longer, so expect roughly 1–2 nm of height and an increase in roughness, not countable strands. To count individual molecules, dilute the DNA to roughly 10 nM as an exploratory condition, and treat it as a separate experiment rather than a readout of the 1 µM run.
+
+**Take a height reference on the same chip.** Image across the functionalized region *and* an adjacent bare graphene area in one scan if the coating allows it; an internal step is far more convincing than comparing against a different chip. If the surface is uniformly coated, run the PBASE + buffer-only control as the baseline instead.
 
 Record chip ID, stock concentration, volumes, deposit volume, incubation start/end, coverage, rinse volumes and counts, and the endpoint.
 
