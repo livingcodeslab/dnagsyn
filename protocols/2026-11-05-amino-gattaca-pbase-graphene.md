@@ -9,7 +9,7 @@ Prerequisite: [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md)
 **The two batches:**
 
 - **DNA:** a **10 µL** draw of the 26.9 µM stock into **259 µL** of 1× PBS = **269 µL at 1.00 µM = 15.57 ng/µL**.
-- **Block:** a **1 mL** batch of 100 mM ethanolamine, pH 9.0, mixed from **234 µL water + 6.1 µL ethanolamine 99% + 760 µL of 0.1 M HCl** added last and slowly, with no pH meter.
+- **Block:** ethanolamine **weighed, 8.6 mg** (= 0.141 mmol), with **330 µL ultrapure water + 1070 µL of 0.1 M HCl** added last and slowly, **≈ 1.41 mL** at 100 mM, pH calculated not measured.
 
 ## Reagents
 
@@ -47,19 +47,22 @@ PBS must be amine-free: no Tris, TE, TAE, glycine, or protein. Mix gently, spin 
 
 A 50 µL deposit is 50 pmol (~779 ng) applied, not immobilized.
 
-## 3. Block — 1 mL, no pH meter
+## 3. Block — 8.6 mg weighed, ≈ 1.41 mL, no pH meter
 
 | Component | Amount |
 | --- | ---: |
-| Ultrapure water | **234 µL** |
-| Ethanolamine, 99% (Thermo 149582500) | **6.1 µL** (6.2 mg) |
-| HCl **0.1 M** (Fisher SA54-1, N/10) | **760 µL**, last and slowly |
+| Ethanolamine, 99% (Thermo 149582500) | **8.6 mg weighed** (= 8.5 µL) |
+| Ultrapure water | **330 µL** |
+| HCl **0.1 M** (Fisher SA54-1, N/10) | **1070 µL**, last and slowly |
+| Final volume | **≈ 1.41 mL** |
 
-1. Water first, then ethanolamine, mix (strongly alkaline). Add the acid slowly last.
-2. No probe, so the acid is calculated: pKa of the conjugate acid is 9.50, so at pH 9.0 the protonated fraction is 1/(1+10^(9.0−9.50)) = **76%**; for the 0.100 mmol of amine in 1 mL that is **0.076 mmol**, i.e. 760 µL of 0.1 M. Expect true pH **8.9–9.1**.
-3. 0.1 M rather than 1 M is deliberate: 760 µL pipettes accurately and ±20 µL moves pH only 0.05 (740 µL → 9.05, 780 µL → 8.96).
-4. The acid is past its 12/2025 expiry and drifts weak, which lands the solution *above* pH 9.0. That is the safe direction, since blocking needs the unprotonated amine: 0.090 M gives 9.17, 0.080 M gives 9.31. Above ~9.5 NHS hydrolysis accelerates, so open a fresh ampoule then.
-5. Cover the DNA-treated area with the block, **30 min at room temperature**, keep wet, then rinse **three times with fresh PBS**.
+1. **Weigh the ethanolamine rather than pipetting it.** 8.6 mg on the balance is far more accurate than ~8.5 µL of a viscous liquid, and the batch size then follows from the mass instead of being chosen: 0.141 mmol at 100 mM requires 1.41 mL.
+2. Water in first, then the weighed ethanolamine, mix (strongly alkaline). Add the acid slowly last.
+3. No probe, so the acid is calculated: pKa of the conjugate acid is 9.50, so at pH 9.0 the protonated fraction is 1/(1+10^(9.0−9.50)) = **76%**; 0.76 × 0.141 mmol = **0.107 mmol**, which is **1070 µL** of 0.1 M HCl. Expect true pH **8.9–9.1**.
+4. The 0.141 mmol uses the nominal molecular weight. Correcting 8.6 mg for the 99% assay gives 0.139 mmol, so the real concentration is 99.0 mM rather than 100, and pH 8.98 rather than 9.00. Both are inside the noise of a calculated value; the recipe is unchanged either way.
+5. 0.1 M rather than 1 M is deliberate: 1070 µL pipettes accurately, and ±20 µL moves pH only 0.05.
+6. The acid is past its 12/2025 expiry and drifts weak, which lands the solution *above* pH 9.0. That is the safe direction, since blocking needs the unprotonated amine: 0.090 M gives pH 9.16, 0.080 M gives 9.31. Above ~9.5 NHS hydrolysis accelerates, so open a fresh ampoule then.
+7. Cover the DNA-treated area with the block, **30 min at room temperature**, keep wet, then rinse **three times with fresh PBS**. ≈ 1.41 mL covers 7–28 applications at 50–200 µL.
 
 Never add ethanolamine before or during DNA coupling: it consumes the NHS sites the coupling needs.
 
