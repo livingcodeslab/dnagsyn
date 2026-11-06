@@ -44,6 +44,34 @@ With a DNA stock in water these mixtures are approximately **0.963× PBS**. For 
 
 Thaw the aliquot, mix gently, spin down briefly, and prepare the dilution immediately before deposition. Keep the remaining stock separate.
 
+### Preparing from a 10 µL stock draw
+
+Drawing 10 µL rather than 1.86 µL is the recommended route: the volumetric error of a P2 pipette at ~2 µL is several percent, while 10 µL on a P20 is about 1%, and that error propagates undiluted into the surface density. It also makes the batch large enough to serve several chips.
+
+**What a 10 µL draw contains:**
+
+- 10 µL × 26.9 µM = **269 pmol** (0.269 nmol)
+- 10 × 418.87 ng/µL = **4.19 µg** of the 50-mer
+- **1.0%** of the 1 mL stock tube
+
+**What is required to reach 1 µM:**
+
+| Component | Volume |
+| --- | ---: |
+| 26.9 µM amino-gattaca stock | **10.0 µL** |
+| 1× PBS, pH 7.4 | **259 µL** |
+| **Total** | **269 µL at 1.00 µM** |
+
+For exactly 1× PBS from a water-based stock, substitute 10× PBS for part of the diluent: **10.0 µL stock + 26.9 µL 10× PBS + 232.1 µL ultrapure water = 269 µL**.
+
+A 270 µL total (10 µL stock + 260 µL PBS) gives 0.996 µM, 0.4% low, which is roundable at the pipette in practice.
+
+**Consumables:** a low-bind 1.5 mL tube, a P20 for the stock draw, and a P200 or P1000 for the 259 µL diluent. Mix by gentle pipetting or inversion, spin down, and use the same day; do not refreeze the dilution.
+
+**Capacity:** 269 µL covers about **5 chips at 50 µL** or **2 chips at 100–200 µL**, less ~10 µL of dead volume and pipetting loss. Prepare the batch from the number of chips actually planned.
+
+The same arithmetic scales to any draw: final volume (µL) = draw (µL) × 26.9, so a 5 µL draw needs 134.5 µL total (129.5 µL diluent) and a 20 µL draw needs 538 µL total (518 µL diluent).
+
 ## Deposition, rinse and block
 
 1. **Start from a clean, well-rinsed PBASE-functionalized surface.** This protocol begins after PBASE deposition and removal of unbound linker and residual organic solvent; see [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md). Couple promptly after surface preparation. Record the coating date, aqueous exposure and storage conditions.
