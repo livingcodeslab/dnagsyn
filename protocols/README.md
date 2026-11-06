@@ -5,7 +5,7 @@ Dated bench procedures in the order they are run. These are the operative protoc
 | Date | Protocol | Covers | Status |
 | --- | --- | --- | --- |
 | 2026-11-04 | [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md) | ~5 mM PBASE in dry DMF, 100 min wet, DMF + water rinse, N₂ dry, AFM endpoint | first run |
-| 2026-11-05 | [First attachment of amino-gattaca](2026-11-05-amino-gattaca-pbase-graphene.md) | 1 µM amine-DNA, 60 min RT, 100 mM ethanolamine pH 9.0 for 30 min | proposed |
+| 2026-11-05 | [First attachment of amino-gattaca](2026-11-05-amino-gattaca-pbase-graphene.md) | 1 µM amine-DNA, 60 min RT, 100 mM ethanolamine pH 9.0 for 30 min, rinses 3 × 500 µL | run 2026-11-05, dried, awaiting AFM |
 
 Oligo and reagent records: [`reports/`](../reports/), including the [Invitrogen certificates for order 12091076](../reports/invitrogen/12091076/README.md).
 

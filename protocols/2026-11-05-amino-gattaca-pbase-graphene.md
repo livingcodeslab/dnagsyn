@@ -1,8 +1,8 @@
 # First attachment of amino-gattaca to PBASE-functionalized graphene
 
 **Date:** 2026-11-05  
-**Status:** first run; not yet validated on this chip.  
-**What we do:** 1 µM amino-gattaca for **60 min** at room temperature, three PBS rinses, then block with **100 mM ethanolamine, pH 9.0, for 30 min**, three more PBS rinses.
+**Status:** run on 2026-11-05; DNA attached, blocked and dried, awaiting AFM.  
+**What we do:** 1 µM amino-gattaca for **60 min** at room temperature, rinse **3 × 500 µL 1× PBS**, block with **100 mM ethanolamine, pH 9.0, for 30 min**, rinse **3 × 500 µL 1× PBS**, then **3 × 500 µL ultrapure water** and nitrogen-dry for dry AFM.
 
 Prerequisite: [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md).
 
@@ -10,6 +10,28 @@ Prerequisite: [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md)
 
 - **DNA:** a **10 µL** draw of the 26.9 µM stock into **259 µL** of 1× PBS = **269 µL at 1.00 µM = 15.57 ng/µL**.
 - **Block:** ethanolamine **weighed, 8.6 mg** (= 0.141 mmol), with **330 µL ultrapure water + 1070 µL of 0.1 M HCl** added last and slowly, **≈ 1.41 mL** at 100 mM, pH calculated not measured.
+- **Rinses:** every rinse was **3 × 500 µL**, PBS first and then ultrapure water, in that order.
+
+## Run record — 2026-11-05
+
+What was actually done, as distinct from the procedure it follows:
+
+| Step | As performed |
+| --- | --- |
+| Coating | PBASE in DMF, 2026-11-04 ([coating protocol](2026-11-04-pbase-dmf-graphene.md)) |
+| DNA | 10 µL stock + 259 µL 1× PBS = 269 µL at 1.00 µM |
+| DNA incubation | 60 min at room temperature |
+| Rinse 1, unbound DNA | **3 × 500 µL 1× PBS** |
+| Block | 8.6 mg ethanolamine + 330 µL water + 1070 µL 0.1 M HCl ≈ 1.41 mL, 100 mM, pH ~9.0 calculated |
+| Block incubation | 30 min at room temperature |
+| Rinse 2, block | **3 × 500 µL 1× PBS** |
+| Rinse 3, salts for dry AFM | **3 × 500 µL ultrapure water**, after the PBS, never before |
+| Drying | nitrogen |
+| State | **dry, awaiting AFM**; stored in a vacuum desiccator over the weekend |
+
+The 500 µL rinses are the volume actually used and are not a shortfall: with a residual film of 10–50 µL, each 500 µL exchange dilutes 10–50-fold, so three exchanges remove roughly 10³–10⁵-fold of the carried-over salt. No re-rinse is needed on volume grounds.
+
+**Desiccator cautions.** If the desiccator is evacuated with an oil-sealed rotary pump, hydrocarbon backstreaming will deposit on the sample and show up as soft blobs in the AFM, so use a dry diaphragm pump or a cold trap, and do not pump harder than needed. Keep desiccant dust off the chip and bring the chamber back to atmosphere through a filter. A weekend dry at room temperature is fine for the DNA; image soon after opening rather than leaving the dried chip in air for another week.
 
 ## Reagents
 
@@ -43,7 +65,7 @@ PBS must be amine-free: no Tris, TE, TAE, glycine, or protein. Mix gently, spin 
 1. Start from a clean, freshly PBASE-coated surface; unbound linker and residual DMF gone. Couple promptly and record the coating date, aqueous exposure and storage.
 2. Apply the 269 µL to the exposed graphene, enough to cover the region without overflow. **Do not touch the graphene with the tip.**
 3. **60 min at room temperature (~20–25 °C)**, covered humid chamber, chip level, surface continuously wet. Keep the water reservoir off the chip and never let the droplet dry.
-4. Take the solution off from the edge and rinse **three times with fresh 1× PBS**, ~0.5–1 mL each, flowed over the surface — no direct jet.
+4. Take the solution off from the edge and rinse **three times with fresh 1× PBS, 500 µL each**, flowed over the surface — no direct jet.
 
 A 50 µL deposit is 50 pmol (~779 ng) applied, not immobilized.
 
@@ -62,7 +84,7 @@ A 50 µL deposit is 50 pmol (~779 ng) applied, not immobilized.
 4. The 0.141 mmol uses the nominal molecular weight. Correcting 8.6 mg for the 99% assay gives 0.139 mmol, so the real concentration is 99.0 mM rather than 100, and pH 8.98 rather than 9.00. Both are inside the noise of a calculated value; the recipe is unchanged either way.
 5. 0.1 M rather than 1 M is deliberate: 1070 µL pipettes accurately, and ±20 µL moves pH only 0.05.
 6. The acid is past its 12/2025 expiry and drifts weak, which lands the solution *above* pH 9.0. That is the safe direction, since blocking needs the unprotonated amine: 0.090 M gives pH 9.16, 0.080 M gives 9.31. Above ~9.5 NHS hydrolysis accelerates, so open a fresh ampoule then.
-7. Cover the DNA-treated area with the block, **30 min at room temperature**, keep wet, then rinse **three times with fresh PBS**. ≈ 1.41 mL covers 7–28 applications at 50–200 µL.
+7. Cover the DNA-treated area with the block, **30 min at room temperature**, keep wet, then rinse **three times with fresh 1× PBS, 500 µL each**. ≈ 1.41 mL covers 7–28 applications at 50–200 µL.
 
 Never add ethanolamine before or during DNA coupling: it consumes the NHS sites the coupling needs.
 
@@ -82,7 +104,7 @@ Ethanolamine stock: melts at 10.3 °C, so do not refrigerate; hygroscopic and ab
 
 **For dry AFM, the water rinse is not optional.** PBS leaves NaCl and phosphate crystals that are orders of magnitude larger than the DNA layer and will dominate any topography you measure, so the order is fixed: **PBS first, then ultrapure water**. The PBS rinses in steps 2 and 3 remove unbound DNA and ethanolamine; the water rinses remove the salts. Never follow water with more PBS, which just puts the salt back.
 
-1. After the final PBS rinse, do **three exchanges of ultrapure water**, ~1 mL each on a 1 cm² chip. This is 10²–10³-fold dilution of the residual film, so three is plenty; the volume is not what matters, the number of exchanges is.
+1. After the final PBS rinse, do **three exchanges of 500 µL ultrapure water** on a 1 cm² chip. This is 10³–10⁵-fold dilution of the residual film, so three is plenty; the volume is not what matters, the number of exchanges is.
 2. **Keep the surface wet until the very last step.** A droplet left to evaporate deposits its salt at the perimeter as a ring, which is the classic artifact here. Remove the final water and dry immediately with a gentle stream of clean nitrogen rather than letting it air-dry.
 3. Rinse the **edges** deliberately; that is where droplets accumulate and where salt survives.
 4. Check after drying: white crystalline patches mean residual salt, and more water exchanges are needed. A faint, uniform change in contrast is what a DNA layer looks like.
