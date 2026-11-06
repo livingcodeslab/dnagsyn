@@ -80,7 +80,19 @@ Ethanolamine stock: melts at 10.3 °C, so do not refrigerate; hygroscopic and ab
 
 ## 4. Endpoint and record
 
-For dry AFM, three ultrapure-water rinses then gentle N₂. For immediate liquid work, leave the chip in the next step's buffer. Record chip ID, stock concentration, volumes, deposit volume, incubation start/end, coverage, rinses and endpoint.
+**For dry AFM, the water rinse is not optional.** PBS leaves NaCl and phosphate crystals that are orders of magnitude larger than the DNA layer and will dominate any topography you measure, so the order is fixed: **PBS first, then ultrapure water**. The PBS rinses in steps 2 and 3 remove unbound DNA and ethanolamine; the water rinses remove the salts. Never follow water with more PBS, which just puts the salt back.
+
+1. After the final PBS rinse, do **three exchanges of ultrapure water**, ~1 mL each on a 1 cm² chip. This is 10²–10³-fold dilution of the residual film, so three is plenty; the volume is not what matters, the number of exchanges is.
+2. **Keep the surface wet until the very last step.** A droplet left to evaporate deposits its salt at the perimeter as a ring, which is the classic artifact here. Remove the final water and dry immediately with a gentle stream of clean nitrogen rather than letting it air-dry.
+3. Rinse the **edges** deliberately; that is where droplets accumulate and where salt survives.
+4. Check after drying: white crystalline patches mean residual salt, and more water exchanges are needed. A faint, uniform change in contrast is what a DNA layer looks like.
+5. **Liquid AFM is better if the instrument allows it.** Image in PBS and skip the water entirely: it avoids drying artifacts, salt residue and any conformational collapse of the DNA on drying.
+
+Water does not strip the DNA, because the attachment is covalent. It *will* remove non-specifically adsorbed DNA, which is exactly what you want on the bare-graphene control. Rinsing with water before a dry AFM measurement is also the published practice: Ping et al. rinsed with DI water and nitrogen-dried before resolving a ~1.2 nm height increase for a 22-mer, and Huang et al. washed with DMF and DI water before imaging coverage.
+
+**For immediate liquid work**, leave the chip in the next step's buffer and skip the water entirely.
+
+Record chip ID, stock concentration, volumes, deposit volume, incubation start/end, coverage, rinse volumes and counts, and the endpoint.
 
 ## Controls
 
