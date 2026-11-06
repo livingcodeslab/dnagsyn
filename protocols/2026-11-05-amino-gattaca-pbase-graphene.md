@@ -68,6 +68,16 @@ Never add ethanolamine before or during DNA coupling: it consumes the NHS sites 
 
 Ethanolamine stock: melts at 10.3 °C, so do not refrigerate; hygroscopic and absorbs CO₂ into carbamate, so keep capped and replace if turbid or aged; corrosive and combustible, so handle in a fume hood.
 
+### Storing the prepared block
+
+≈ 1.41 mL is 7 × 200 µL aliquots, more than one session, so it needs storing. Split it into 200 µL single-use aliquots, fill the tubes nearly full, cap tightly and freeze at **−20 °C**; thaw one per session, use it, discard the remainder rather than refreezing.
+
+- **Cold and sealed matter here for a different reason than the acid.** CO₂ from air converts the free amine to carbamate (RNH₂ + CO₂ + H₂O → RNH₃⁺ + HCO₃⁻), which both removes the nucleophile that blocking needs and lowers the pH. That error runs in the **unsafe** direction, unlike the weak expired acid. A sealed, nearly-full tube is effectively protected, because the CO₂ available is only what sits in the headspace: 1 mL of headspace holds about 0.02 µmol, which is 0.05% of the 34 µmol of free amine in the batch.
+- **Do not leave it at room temperature for days.** 100 mM ethanolamine in water is a growth medium for organisms that use ethanolamine as a carbon and nitrogen source, and pH 9 only slows them.
+- **Fridge-only storage** is acceptable for a week or two if the tube is capped and nearly full, but frozen aliquots are better if the batch is going to sit.
+- **The neat 250 mL stock takes the opposite rule:** room temperature, because it melts at 10.3 °C.
+- Label each aliquot with the concentration, "pH 9.0 (calculated)" and the date. Warm to room temperature and inspect before use; discard if cloudy or if anything has precipitated.
+
 ## 4. Endpoint and record
 
 For dry AFM, three ultrapure-water rinses then gentle N₂. For immediate liquid work, leave the chip in the next step's buffer. Record chip ID, stock concentration, volumes, deposit volume, incubation start/end, coverage, rinses and endpoint.
