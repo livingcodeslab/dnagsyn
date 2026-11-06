@@ -106,7 +106,7 @@ Use **60 min** for the first run. A static drop on a 1 cm² chip has different m
 - A **bare-graphene + DNA control** would separate linker-mediated attachment from nonspecific adsorption.
 - Exposure to water or humidity during storage hydrolyses reactive NHS groups. More DNA will not restore them; start from a freshly prepared PBASE surface if activity is uncertain. Do not read a failed deposition as "the DNA concentration was too low".
 - At 1 µM, published work gives dense coverage in which **individual molecules are not resolved by AFM**. A topographic change alone does not prove covalent coupling.
-- Ethanolamine caps residual NHS sites. It does not remove all nonspecific adsorption to exposed graphene and does not by itself prove covalent DNA attachment.
+- Ethanolamine caps residual NHS sites. It does not remove all nonspecific adsorption to exposed graphene and does not by itself prove covalent DNA attachment. Blocking is also not universal in the DNA-GFET literature: Ping et al. (2016) and Deng et al. (2026) attach amine-DNA with no blocking step at all. It is included here because Xu et al. (2017) and Huang et al. (2010) block with 100 mM / 0.1 M ethanolamine, and capping unreacted NHS esters is the conservative choice when the surface will later be in contact with protein or enzyme.
 
 ## Evidence
 
