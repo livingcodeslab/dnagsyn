@@ -84,7 +84,7 @@ The same arithmetic scales to any draw: final volume (µL) = draw (µL) × 26.9,
 
 4. **Remove unbound DNA.** Take the solution off from the edge and rinse with three fresh portions of 1× PBS, ~0.5–1 mL each for a 1 cm² chip, adjusted to the holder. Flow the rinse over the surface; do not jet it directly at the graphene.
 
-5. **Block only after the DNA rinse.** Cover the same region with **100 mM ethanolamine, pH 9.0**, incubate **30 min at room temperature**, keep wet, then rinse gently with three fresh PBS portions. Never add ethanolamine before or during DNA coupling: it consumes the NHS sites that the coupling needs.
+5. **Block only after the DNA rinse.** Cover the same region with **100 mM ethanolamine, pH 9.0** (1 mL recipe below: 234 µL water + 6.1 µL ethanolamine + 760 µL 0.1 M HCl, no pH meter required), incubate **30 min at room temperature**, keep wet, then rinse gently with three fresh PBS portions. Never add ethanolamine before or during DNA coupling: it consumes the NHS sites that the coupling needs.
 
 6. **Choose the endpoint.** For dry AFM, follow with three fresh ultrapure-water rinses to remove PBS salts and dry gently with clean nitrogen. For immediate liquid work, leave the chip in the buffer required by the next step. Keep chip rinsing separate from handling the AFM cantilever.
 
@@ -94,9 +94,43 @@ A 50 µL deposition applies **50 pmol (~779 ng)** of DNA; that is the amount app
 
 ## Solutions
 
-### 100 mM ethanolamine, pH 9.0
+### 100 mM ethanolamine, pH 9.0 — 1 mL batch, no pH meter (the recipe we mix)
 
-Reagent: Thermo Scientific **149582500**, ethanolamine 99%, neat free base (not a salt, not a pre-made solution). Correct the weighed mass for the 99% assay.
+Reagent: Thermo Scientific **149582500**, ethanolamine 99%, neat free base (not a salt, not a pre-made solution).
+
+| Component | Amount |
+| --- | ---: |
+| Ultrapure water | **234 µL** |
+| Ethanolamine, 99% (Thermo 149582500) | **6.1 µL** (6.2 mg) |
+| HCl **0.1 M** (Fisher SA54-1, N/10) | **760 µL**, added last and slowly |
+| Total | ≈ 1.00 mL |
+
+**Why the acid volume is calculated rather than measured.** With no pH probe available, the acid is set from the buffer equation. Ethanolamine's conjugate acid has pKa 9.50, so at pH 9.0 the protonated fraction is 1/(1+10^(9.0−9.50)) = **76%**. For the 0.100 mmol of amine in 1 mL that is **0.076 mmol HCl**, i.e. 760 µL of 0.1 M. Adding the acid slowly to the diluted amine, rather than amine to acid, keeps the local pH from spiking.
+
+Expected true pH is therefore about **8.9–9.1**, limited by activity effects the calculation ignores.
+
+**0.1 M HCl rather than 1 M** is deliberate: 760 µL on a P1000 is a far more accurate delivery than 76 µL on a P100, and the acid volume error has very little effect on the achieved pH, because pH is logarithmic:
+
+| Acid delivered (at 0.100 M) | Resulting pH |
+| ---: | ---: |
+| 740 µL | 9.05 |
+| 760 µL | 9.01 |
+| 780 µL | 8.96 |
+
+**The HCl is past its certified expiry (12/2025).** HCl drifts weak with age, which means less acid delivered than assumed, which lands the solution *above* pH 9.0 — the safe direction, because blocking needs the unprotonated amine and a lower pH would leave less of it. The sensitivity is mild:
+
+| If the acid is actually | Achieved pH |
+| ---: | ---: |
+| 0.095 M | 9.09 |
+| 0.090 M | 9.17 |
+| 0.080 M | 9.31 |
+| 0.070 M | 9.45 |
+
+Even a badly degraded 0.05 M bottle would give pH 9.7, still workable for a 30 min block at room temperature, though NHS hydrolysis accelerates above pH 9.5 and that is the point where a fresh ampoule is worth opening. A 5 µL aliquot on pH paper covering the 8.5–9.5 range is a cheap cross-check if any is on hand.
+
+Mix fresh on the day, use the same day, and apply enough to cover the DNA-treated area, typically 50–200 µL. **Block 30 min at room temperature**, keeping the surface wet.
+
+### 100 mM ethanolamine at other volumes, or with a pH meter
 
 | Final volume | Ethanolamine (99%, by weight) | Approximate volume | From a 1 M stock |
 | ---: | ---: | ---: | ---: |
