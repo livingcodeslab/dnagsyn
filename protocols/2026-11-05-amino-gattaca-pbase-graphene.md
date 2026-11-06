@@ -43,7 +43,7 @@ Thaw the DNA aliquot, mix gently, and briefly spin down before pipetting. Prepar
 
 ## Deposition and rinse
 
-1. **Use a clean, well-rinsed PBASE-functionalized graphene surface.** This protocol begins after PBASE deposition and removal of unbound linker and residual organic solvent. Prefer coupling promptly after surface preparation. Record the coating date, aqueous exposure, and storage conditions.
+1. **Use a clean, well-rinsed PBASE-functionalized graphene surface.** This protocol begins after PBASE deposition and removal of unbound linker and residual organic solvent; see [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md). Prefer coupling promptly after surface preparation. Record the coating date, aqueous exposure, and storage conditions.
 
 2. **Apply the 1 µM DNA solution.** Use 50 µL only if it covers the intended region. For a full approximately 1 cm² chip, prepare 100–200 µL and use enough to maintain coverage without overflow. Coverage determines the volume required. Do not touch or scrape the graphene with the tip.
 

@@ -4,6 +4,8 @@ Solution preparation + 100-minute deposition | 4 November 2026
 
 **Recipe:** approximately 5 mM PBASE in dry DMF; 500 µL batch. For an exposed, bare graphene chip, approximately 1 cm². Endpoint: rinsed and dried for AFM.
 
+Next step: [first attachment of amino-gattaca to PBASE-functionalized graphene](2026-11-05-amino-gattaca-pbase-graphene.md) (DNA coupling and ethanolamine blocking).
+
 ## 1. Prepare and mix
 
 **Reagents:** 0.964 mg PBASE (MW 385.41 g/mol) + 500 µL dry DMF.
