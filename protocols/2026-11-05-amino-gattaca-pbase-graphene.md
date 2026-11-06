@@ -60,7 +60,9 @@ Drawing 10 µL rather than 1.86 µL is the recommended route: the volumetric err
 | --- | ---: |
 | 26.9 µM amino-gattaca stock | **10.0 µL** |
 | 1× PBS, pH 7.4 | **259 µL** |
-| **Total** | **269 µL at 1.00 µM** |
+| **Total** | **269 µL at 1.00 µM = 15.57 ng/µL** |
+
+The 4.19 µg drawn is spread over 269 µL, so the mass concentration in the tube is 4188.7 / 269 = **15.57 ng/µL**, identical to the 1 µM target (1 µM × 15,571.2 / 1,000 = 15.5712 ng/µL) because mass is conserved through the dilution.
 
 For exactly 1× PBS from a water-based stock, substitute 10× PBS for part of the diluent: **10.0 µL stock + 26.9 µL 10× PBS + 232.1 µL ultrapure water = 269 µL**.
 
