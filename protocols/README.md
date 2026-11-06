@@ -9,7 +9,7 @@ Dated bench procedures in the order they are run. These are the operative protoc
 
 Oligo and reagent records: [`reports/`](../reports/), including the [Invitrogen certificates for order 12091076](../reports/invitrogen/12091076/README.md).
 
-`protocols.tex` in the repository root is the earlier manuscript draft. Its system-level reasoning and reflection of Protocols 1 and 2 are current, but its *Graphene Functionalization Protocol* section is **legacy**: 1 mM PBASE dried by solvent evaporation for 15–30 min, and 50 mM ethanolamine in PBS. Do not run that section; use the procedures above.
+`proposal.tex` in the repository root is the system description and experimental plan (hypothesis, GFET setup, Protocols 1 and 2, release chemistry). It contains no bench procedure: its former inline functionalization section (1 mM PBASE dried by solvent evaporation for 15–30 min, 50 mM ethanolamine in PBS) was never executed and has been removed, with the text left in the history.
 
 ## Where these procedures sit against published practice
 

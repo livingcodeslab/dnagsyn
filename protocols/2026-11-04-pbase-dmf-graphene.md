@@ -27,4 +27,5 @@ Next step: [first attachment of amino-gattaca to PBASE-functionalized graphene](
 
 ## Handling notes
 
-Use a regular micropipette with a fresh polypropylene tip for brief DMF transfers. Dispense promptly and keep solvent out of the pipette body. This procedure assumes exposed graphene; compatibility of packaged-device resin with DMF has not been established.
+- **Safety.** Handle DMF in a fume hood to avoid vapor inhalation. Wear appropriate PPE (gloves, lab coat, safety glasses) at all times, including for the PBASE powder. Dispose of waste according to institutional guidelines, and exercise caution with the small volumes and delicate material handled here.
+- Use a regular micropipette with a fresh polypropylene tip for brief DMF transfers. Dispense promptly and keep solvent out of the pipette body. This procedure assumes exposed graphene; compatibility of packaged-device resin with DMF has not been established.

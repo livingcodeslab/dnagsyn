@@ -30,18 +30,27 @@ So the release cut has to be made by an enzyme that we make duplex on demand at 
 The cut is internal, so the released molecule is nt 14–50 (**37 nt**) plus whatever TdT appended.
 That gives a clean internal length standard: 37 nt when synthesis is blocked, 37+n nt when synthesis proceeds.
 
-Complement for the release step:
+Complement for the release step: we already hold it — **`fluor-tgtaatc`** (primer 515677F09, order 12091076), the 5′-fluoroscein full reverse complement.
 
 ```txt
 template 5'-GATTACACAGGCAAGCTTAGGATGTAGGTCTTAACTCGTCTCTGGTCTCA-3'
-                       |||||||||||||||||||||
-comp     3'-GACCTACATCCTAAGCTTGCCTG-5'    23 nt, anneals to nt 8-30, Tm ~57 C
-         5'-GACCTACATCCTAAGCTTGCCTG-3'    5' fluorophore -> CE readout + release control
+         3'-CTAATGTGTCCGTTCGAATCCTACATCCAGAATTGAGCAGAGACCAGAGT-5'   50 bp blunt duplex
+comp     5'-TGAGACCAGAGACGAGTTAAGACCTACATCCTAAGCTTGCCTGTGTAATC-3'
+         ^ 5' fluoroscein, and it ends up on the released piece
+
+HindIII cuts A^AGCTT on the template strand and TTCGA^A on the complement,
+i.e. between template nt 13/14 and between template nt 17/18.
+
+tethered stub : template nt 1-17  + complement nt 34-50   -> 17 bp
+the FAM piece : template nt 14-50 + complement nt 1-33    -> 33 bp, + 4 nt 5'-AGCT overhang
+                                                              + single-stranded 3' tail of n nt
 ```
 
-That leaves 5 bp of flanking duplex upstream of the site and 12 bp downstream; a bare 6 bp duplex will not hold a dimeric enzyme with a ~20 bp footprint.
-If the complement is pre-annealed *before* TdT extension (rather than at the release step), its own 3' end must be blocked (3'-ddC / 3'-phosphate / inverted dT), because a free 3' end is itself a TdT substrate.
-Labeling the complement rather than the template is deliberate: the released product inherits the fluorophore, and the signal recovered in the wash is a release-efficiency control, which matters because a failed cut and a blocked synthesis look identical in the CE trace otherwise.
+A full-length complement is strictly better than a truncated one here: 33 bp of duplex on the released side plus 17 bp on the tethered side means ample flanking duplex for a dimeric enzyme, and it anneals fast.The tradeoff is that it duplexes the 3′ end, so it must be annealed **at the release step only** — never before or during TdT extension, which needs a single-stranded 3′-OH.
+
+Caveat on readout: the fluorescent strand is the complement, fixed at **33 nt** no matter how much TdT added. Under denaturing CE the label reports *how much* was released, not *how long* the products are. Use it as a release-efficiency/quantitation control and get length distributions from nanopore sequencing (or non-denaturing CE, where mobility tracks total length).
+
+The stock is hand-annotated 100 µM with no reconstitution volume recorded, so remeasure before use.
 
 ## Single-strand activity of these sites
 

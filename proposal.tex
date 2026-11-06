@@ -88,10 +88,10 @@ We should also be able to obtain a positive control that enzymatic synthesis can
     \end{enumerate}
     \item Form the duplex required for cleavage and cleave the products from the surface using HindIII.
     \begin{enumerate} %[i.]
-        \item Flow the 5'-fluorophore-labelled complement (5'-GACCTACATCCTAAGCTTGCCTG-3') over the chip and anneal with a temperature ramp: approximately 65 °C, then slow cooling to 37 °C. A 37 °C soak alone will not anneal a 23 nt complement at nanomolar concentration on a practical timescale.
+        \item Flow the 5'-fluoroscein-labelled reverse complement \texttt{fluor-tgtaatc} (50\,nt) over the chip and anneal with a temperature ramp: heat to about 90 °C, then cool slowly to 37 °C. The full-length duplex melts at high temperature, so a 37 °C soak alone will neither denature nor reanneal it.
         \item Flow HindIII and incubate at 37 °C to cleave the synthesized products from the surface of the GFET.
     \end{enumerate}
-    \item Collect the wash from this final step (approximately 50-100µL) and analyze it using capillary electrophoresis or nanopore sequencing to observe the length distribution of the synthesized DNA molecules. The cut is internal (between nt 13 and 14 of the template), so the no-synthesis control is a 37 nt product and synthesis shifts the distribution to 37 + $n$ nt.
+    \item Collect the wash from this final step (approximately 50-100µL) and analyze it using capillary electrophoresis or nanopore sequencing to observe the length distribution of the synthesized DNA molecules. The cut is internal (between nt 13 and 14 of the template), so the no-synthesis control is a 37 nt product and synthesis shifts the distribution to 37 + $n$ nt. Because the fluorophore sits on the complement strand, denaturing capillary electrophoresis reports how much was released rather than product length; use nanopore sequencing for length distributions.
 \end{enumerate}
 
 \section*{Protocol 2: Specifying the order of incorporated DNA bases}
@@ -121,16 +121,27 @@ In this case we might apply both capillary electrophoresis and DNA sequencing to
 
 The template oligonucleotide is single-stranded when it is tethered to the graphene and throughout TdT extension, because TdT requires a single-stranded 3' hydroxyl to extend.
 The release step therefore has to create a short duplex around the restriction site on demand.
-We use HindIII, which cuts the internal site AAGCTT at positions 13--18 of the 50\,nt template and is inactive on single-stranded DNA, and therefore requires that the complementary oligonucleotide \texttt{HR3comp} be annealed before digestion.
+We use HindIII, which cuts the internal site AAGCTT at positions 13--18 of the 50\,nt template and is inactive on single-stranded DNA, and therefore requires that a complementary strand be annealed before digestion.
+We use the 5'-fluoroscein-labelled 50\,nt oligo we already hold (\texttt{fluor-tgtaatc}, primer 515677F09, order 12091076), which is the exact reverse complement of the template.
 We deliberately do not use the Type IIS sites present in the template (Esp3I/BsmBI, Eco31I/BsaI) for the release step: their reported activity on single-stranded DNA is none (BsaI) or at best partial (BsmBI), and FokI requires a duplex recognition site together with dimerization to cleave.
 They remain useful for nested cuts made \emph{in solution} on the released product once it is duplexed.
 
 Because the 5' end of the template is nt 1 and the HindIII cut falls between nt 13 and 14, the released molecule is the 37\,nt downstream fragment plus whatever TdT has appended, with a 4\,nt 5'-AGCT overhang from the staggered cut.
 The no-synthesis control is therefore a 37\,nt species, and synthesis moves the product to 37 + $n$\,nt.
 
-\texttt{HR3comp}: 5'-GACCTACATCCTAAGCTTGCCTG-3' (23\,nt, T$_m$ $\approx$ 57 °C), annealing to nt 8--30 of the template, 5'-fluorophore labelled.
-Carrying the label on the complement means the released product inherits a fluorophore and can be detected directly by capillary electrophoresis, and the fluorescence recovered in the wash doubles as a release-efficiency control.
-If the complement is instead pre-annealed before TdT extension, its own 3' end must be blocked (3'-dideoxy, 3'-phosphate or inverted dT), because a free 3' end is itself a TdT substrate.
+\texttt{fluor-tgtaatc}: 5'-TGAGACCAGAGACGAGTTAAGACCTACATCCTAAGCTTGCCTGTGTAATC-3', 50\,nt, 5'-fluoroscein (primer 515677F09, order 12091076, 19.7\,nmol).
+Its stock is annotated 100\,$\mu$M by hand with no reconstitution volume recorded, so remeasure it before use rather than trusting the label.
+As a full-length complement it forms a blunt 50\,bp duplex with the template, which duplexes the 3' end and blocks TdT, so it must be annealed at the release step only and never before or during extension.
+By contrast, a short complement spanning only the restriction site could be pre-annealed, but would then need a blocked 3' end (3'-dideoxy, 3'-phosphate or inverted dT), because a free 3' end is itself a TdT substrate.
+
+HindIII cuts this duplex at the same position, so the complement is split too: the 33\,nt portion paired to template nt 18--50 stays with the released product and carries the fluorophore, while the 17\,nt portion paired to nt 1--17 remains on the surface stub.
+The released species is therefore the 37\,nt template fragment duplexed over 33\,bp, with a 4\,nt 5'-AGCT overhang at its 5' end and a single-stranded 3' tail of $n$ nucleotides.
+
+Note what this means for readout.
+The fluorescent strand is the complement, and its length is fixed at 33\,nt however much TdT added.
+Under denaturing capillary electrophoresis the label therefore reports \emph{how much} was released, not \emph{how long} the products are.
+Length distributions require nanopore sequencing of the released material, or non-denaturing CE, where mobility does depend on total length.
+The fluorophore is best used for release efficiency and quantitation, and sequencing for length.
 
 Two further requirements follow from this design.
 First, TdT must be inactivated and washed out before release, otherwise it continues to extend the released fragments in the collected wash and smears the length distribution; note that this also makes a failed release indistinguishable from blocked synthesis unless a release control is included.
@@ -148,110 +159,15 @@ For flexibility, the system should contain 16 reservoirs.
     \item Deoxynucleotide triphosphates (dNTPs): dATP, dTTP, dGTP, and dCTP.
     \item Terminal deoxynucleotidyl transferase (TdT).
     \item HindIII restriction enzyme, with 10x HindIII reaction buffer (Mg$^{2+}$, Co$^{2+}$-free).
-    \item Single-stranded DNA primer complementary to the HindIII site and its flanking sequence, 5' fluorophore labelled (\texttt{HR3comp}: 5'-GACCTACATCCTAAGCTTGCCTG-3').
+    \item Single-stranded DNA primer: the 5'-fluoroscein-labelled reverse complement of the template (\texttt{fluor-tgtaatc}: 5'-TGAGACCAGAGACGAGTTAAGACCTACATCCTAAGCTTGCCTGTGTAATC-3'), which forms the duplex that HindIII requires.
 \end{enumerate}
 
 \section*{Graphene Functionalization Protocol}
 
-This section outlines the step-by-step protocol for functionalizing graphene with single-stranded DNA (ssDNA) using Pyrenebutyric acid N-hydroxysuccinimide ester (PBASE) and amine-modified ssDNA. This protocol ensures stable attachment of ssDNA to the graphene surface, which is crucial for subsequent experiments.
-
-\textbf{This section is a legacy draft and is not the procedure we run.}
-The operative bench protocols are the dated Markdown procedures in \texttt{protocols/}: the PBASE coating protocol, and the amino-oligo attachment and blocking protocol.
-The values below differ from what we actually do, in two ways that matter: about 5\,mM PBASE in dry DMF with a 100\,min incubation that keeps the surface wet, rather than 1\,mM PBASE dried by solvent evaporation for 15--30\,min; and 100\,mM ethanolamine at pH 9.0 for 30\,min, rather than 50\,mM in PBS.
-The system-level reasoning and Protocols 1 and 2 above remain current.
-
-\subsection*{Materials and Equipment}
-
-\begin{itemize}
-    \item Graphene samples (1 cm $\times$ 1 cm sheets)
-    \item Pyrenebutyric acid N-hydroxysuccinimide ester (PBASE), MW: 385.41 g/mol
-    \item N,N-Dimethylformamide (DMF), anhydrous
-    \item single-stranded DNA (ssDNA) with a 5' amine group (in 1x PBS @ 26.9 µM)
-    \item ssDNA with 5' fluorophore (in 1x PBS @ 100 µM) (for verification)
-    \item HindIII restriction enzyme and 10x HindIII reaction buffer (Mg$^{2+}$) (for DNA release)
-    \item Release complement \texttt{HR3comp} (5'-GACCTACATCCTAAGCTTGCCTG-3'), 5' fluorophore labelled (for DNA release)
-    \item Ethanolamine (Thermo Scientific 149582500, 99\%, neat free base), MW: 61.08 g/mol, density 1.012 g/mL; store at room temperature, not at 4°C, since it solidifies below about 10°C
-    \item Phosphate-buffered saline (PBS) or appropriate buffer solution
-    \item Deionized water
-    \item Small glass vials or test tubes
-    \item Micropipettes and disposable tips
-    \item Petri dishes or suitable containers
-    \item Fume hood
-    \item Personal protective equipment: Gloves, lab coat, safety glasses
-    \item Breathable cover (optional, for protecting samples during drying)
-    \item Fluorescence microscope (for optional verification step)
-    \item Analytical balance (0.1 mg precision)
-\end{itemize}
-
-\subsection*{Procedure}
-
-\begin{enumerate}
-    \item \textbf{Prepare PBASE solution}
-    \begin{enumerate}[label=(\alph*)]
-        \item Weigh 3.85 mg PBASE (10 µmol) using an analytical balance.
-        \item In a small glass vial, dissolve the 3.85 mg PBASE in 10 mL anhydrous DMF to make a 1 mM (0.385 mg/mL) solution.
-        \item Vortex or stir until PBASE is fully dissolved.
-    \end{enumerate}
-
-    \item \textbf{Functionalize graphene with PBASE}
-    \begin{enumerate}[label=(\alph*)]
-        \item Place graphene samples in a clean Petri dish inside a fume hood.
-        \item Apply 20-50 $\mu$L of 1 mM PBASE solution to each sample, focusing on the specific area to be functionalized.
-        \item Allow DMF to evaporate completely (approx. 15-30 minutes) at room temperature.
-    \end{enumerate}
-
-    \item \textbf{Prepare and attach amine-modified ssDNA}
-    \begin{enumerate}[label=(\alph*)]
-        \item Prepare 2-4 µL of 10 µM working solution of amine-modified ssDNA from stock for each sample.
-        \item Using a micropipette, carefully spot 1-2 $\mu$L of the 10 µM ssDNA solution onto the specific area of interest on each PBASE-functionalized sample.
-        \item Incubate at room temperature for 2 hours.
-    \end{enumerate}
-
-    \item \textbf{Block unreacted NHS ester groups}
-    \begin{enumerate}[label=(\alph*)]
-        \item Prepare 50 mM ethanolamine solution in PBS:
-        \begin{itemize}
-            \item Add 30.5 µL of the 99\% ethanolamine to 10 mL of PBS. Weighing 30.9 mg of the 99\% liquid gives exactly 50.0 mM and is preferable to pipetting a viscous 30 µL volume.
-        \end{itemize}
-        \item Gently rinse samples with PBS to remove unbound ssDNA.
-        \item Apply 20-50 $\mu$L ethanolamine solution to each sample, focusing on the functionalized area.
-        \item Incubate at room temperature for 30 minutes.
-    \end{enumerate}
-
-    \item \textbf{Wash and dry samples}
-    \begin{enumerate}[label=(\alph*)]
-        \item Rinse samples thoroughly with PBS (3 times, 1 mL each), then with deionized water (3 times, 1 mL each).
-        \item Allow samples to air dry naturally inside the fume hood:
-        \begin{itemize}
-            \item Leave samples undisturbed until all visible moisture has evaporated (approximately 30 minutes to 1 hour).
-            \item Optionally, cover samples with a breathable cover to prevent dust contamination.
-        \end{itemize}
-        \item Store functionalized samples at 4°C until use.
-    \end{enumerate}
-
-    \item \textbf{Verify functionalization}
-    \begin{enumerate}[label=(\alph*)]
-        \item Repeat steps 3-5 using amine-modified ssDNA with 3' fluorophore.
-        \item Image samples using a fluorescence microscope to verify ssDNA presence.
-    \end{enumerate}
-\end{enumerate}
-
-\subsection*{Notes}
-\begin{itemize}
-    \item The PBASE concentration (1 mM) is chosen to ensure sufficient coverage of the graphene surface while minimizing excess.
-    \item The ssDNA concentration (10 µM) is selected to provide an excess of DNA molecules relative to the available PBASE binding sites, promoting efficient functionalization.
-    \item Volumes applied to the graphene samples are optimized for functionalizing small areas of the chip. Adjust as needed based on the specific area of interest and absorbency of the samples.
-    \item All solutions should be prepared fresh on the day of use for optimal results.
-    \item This protocol is optimized for efficiency and cost-effectiveness when functionalizing small areas of the GFET chips.
-\end{itemize}
-
-\subsection*{Safety Considerations}
-
-\begin{itemize}
-    \item Handle DMF in a fume hood to avoid vapor inhalation.
-    \item Wear appropriate PPE (gloves, lab coat, safety glasses) at all times.
-    \item Dispose of waste according to institutional guidelines.
-    \item Exercise caution when handling small volumes and delicate materials.
-\end{itemize}
+The functionalization procedure is maintained as dated bench protocols outside this document: \texttt{protocols/2026-11-04-pbase-dmf-graphene.md} for PBASE coating, and \texttt{protocols/2026-11-05-amino-gattaca-pbase-graphene.md} for attachment of the amino-modified oligo and ethanolamine blocking.
+Those are the procedures we run: about 5\,mM PBASE in dry DMF for 100\,min with the surface kept wet, then 1\,$\mu$M 5'-amine DNA for 60\,min at room temperature, then 100\,mM ethanolamine at pH 9.0 for 30\,min.
+An earlier version of this document carried an inline procedure (1\,mM PBASE dried by solvent evaporation for 15--30\,min, 50\,mM ethanolamine in PBS) that was never executed.
+It has been removed rather than left in place to be followed by mistake, and the earlier text remains in the repository history.
+DMF handling, PPE and waste-disposal requirements are recorded with the coating protocol.
 
 \end{document}
