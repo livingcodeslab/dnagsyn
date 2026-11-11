@@ -36,10 +36,10 @@ The two amino oligos have identical nucleotide sequences. The fluorescent oligo 
 
 The handwritten stock concentrations are historical annotations, not new concentration measurements. A reconstitution volume is recorded only for the two amino oligos. No preparation date, solvent, or current stock status is given.
 
-## Related protocol
+## Related protocols
 
-[First attachment of amino-gattaca to PBASE graphene](../../../protocols/2026-11-05-amino-gattaca-pbase-graphene.md) includes stock dilution, a 60-minute DNA incubation, and ethanolamine blocking.
+[First attachment of amino-gattaca to PBASE graphene](../../../protocols/2026-11-05-amino-gattaca-pbase-graphene.md) includes stock dilution, a 60-minute DNA incubation, and ethanolamine blocking. **Run on 2026-11-05**; the chips were water-rinsed and imaged on 2026-11-11, and the AFM scans are not yet recorded.
 
-It is a proposed protocol, not a record of an experiment already performed.
+[Hybridization of fluor-tgtaatc](../../../protocols/2026-11-11-fluor-tgtaatc-hybridization.md) uses the line-2 certificate's oligo as the fluorescein complement to the tethered template. It is a proposed protocol, not a record of an experiment already performed, and it includes the readings that verify this tube's unconfirmed 100 µM annotation.
 
 Transcribed and checked on **2026-11-05**.

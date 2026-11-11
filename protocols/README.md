@@ -5,9 +5,13 @@ Dated bench procedures in the order they are run. These are the operative protoc
 | Date | Protocol | Covers | Status |
 | --- | --- | --- | --- |
 | 2026-11-04 | [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md) | ~5 mM PBASE in dry DMF, 100 min wet, DMF + water rinse, N₂ dry, AFM endpoint | first run |
-| 2026-11-05 | [First attachment of amino-gattaca](2026-11-05-amino-gattaca-pbase-graphene.md) | 1 µM amine-DNA, 60 min RT, 100 mM ethanolamine pH 9.0 for 30 min, rinses 3 × 500 µL | run 2026-11-05, dried, awaiting AFM |
+| 2026-11-05 | [First attachment of amino-gattaca](2026-11-05-amino-gattaca-pbase-graphene.md) | 1 µM amine-DNA, 60 min RT, 100 mM ethanolamine pH 9.0 for 30 min, rinses 3 × 500 µL | run 2026-11-05; re-wetted and imaged 2026-11-11; AFM data not yet recorded |
+| 2026-11-11 | [Water rinse and Dino-Lite imaging](2026-11-11-water-rinse-and-dino-lite-imaging.md) | 6 × 1 mL ultrapure water in a 24-well plate, white vs blue excitation (images 36–39) | run 2026-11-11; pre-hybridization baseline |
+| 2026-11-11 | [Hybridization of fluor-tgtaatc](2026-11-11-fluor-tgtaatc-hybridization.md) | 1 µM fluorescein complement, 90 °C → 37 °C anneal at 1 °C/min, PBS washes, fluorescence readout | proposed, not yet run |
 
 Oligo and reagent records: [`reports/`](../reports/), including the [Invitrogen certificates for order 12091076](../reports/invitrogen/12091076/README.md).
+
+**Order matters, and one step is one-way.** The complement is the exact 50 nt reverse complement, so it duplexes the template's 3′ terminus and **blocks TdT**. Hybridization is therefore the last thing done to a chip that is being extended, or it is done on a replicate chip; keep an unhybridized chip aside. The same anneal is also the first half of the HindIII release step.
 
 `proposal.tex` in the repository root is the system description and experimental plan (hypothesis, GFET setup, Protocols 1 and 2, release chemistry). It contains no bench procedure: its former inline functionalization section (1 mM PBASE dried by solvent evaporation for 15–30 min, 50 mM ethanolamine in PBS) was never executed and has been removed, with the text left in the history.
 

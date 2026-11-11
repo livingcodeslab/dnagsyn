@@ -1,7 +1,7 @@
 # First attachment of amino-gattaca to PBASE-functionalized graphene
 
 **Date:** 2026-11-05  
-**Status:** run on 2026-11-05; DNA attached, blocked and dried, awaiting AFM.  
+**Status:** run on 2026-11-05; DNA attached, blocked, dried and stored over the weekend. Re-wetted, water-rinsed and imaged on 2026-11-11 (images 36–39); AFM scans not yet recorded.  
 **What we do:** 1 µM amino-gattaca for **60 min** at room temperature, rinse **3 × 500 µL 1× PBS**, block with **100 mM ethanolamine, pH 9.0, for 30 min**, rinse **3 × 500 µL 1× PBS**, then **3 × 500 µL ultrapure water** and nitrogen-dry for dry AFM.
 
 Prerequisite: [PBASE in DMF: graphene coating](2026-11-04-pbase-dmf-graphene.md).
@@ -27,7 +27,9 @@ What was actually done, as distinct from the procedure it follows:
 | Rinse 2, block | **3 × 500 µL 1× PBS** |
 | Rinse 3, salts for dry AFM | **3 × 500 µL ultrapure water**, after the PBS, never before |
 | Drying | nitrogen |
-| State | **dry, awaiting AFM**; stored in a vacuum desiccator over the weekend |
+| State | **dried** after the 2026-11-05 run, stored in a vacuum desiccator over the weekend; re-wetted for the [2026-11-11 rinse and imaging](2026-11-11-water-rinse-and-dino-lite-imaging.md) |
+
+The run above ends at the dry chip. What happened next is a separate dated record: [water rinse and Dino-Lite imaging, 2026-11-11](2026-11-11-water-rinse-and-dino-lite-imaging.md), and the next planned step is [hybridization of the fluorescein complement](2026-11-11-fluor-tgtaatc-hybridization.md) — which duplexes the template's 3′ end and so ends any further TdT work on that chip.
 
 The 500 µL rinses are the volume actually used and are not a shortfall: with a residual film of 10–50 µL, each 500 µL exchange dilutes 10–50-fold, so three exchanges remove roughly 10³–10⁵-fold of the carried-over salt. No re-rinse is needed on volume grounds.
 
