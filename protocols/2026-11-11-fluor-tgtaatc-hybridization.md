@@ -130,9 +130,14 @@ The chip has just been through six water exchanges and may be dry. **Hybridizati
 
 | Conditions | Na⁺ | Tm of this 50 bp duplex |
 | --- | ---: | ---: |
-| printed certificate | 50 mM | **79 °C** |
-| 1× PBS | 137 mM | **≈ 86 °C** (interpolated: the printed points give ~17 °C per decade of [Na⁺]) |
 | printed certificate | 1 M | **101 °C** |
+| 1× PBS | 137 mM | **≈ 86 °C** |
+| printed certificate | 50 mM | **79 °C** |
+| 10 mM | **≈ 67 °C** | |
+| 1 mM | **≈ 50 °C** | |
+| ultrapure water | ~0.1 mM | **≈ 33 °C** |
+
+The 1 M and 50 mM points are printed and give **~17 °C per decade of [Na⁺]**; every other row is that interpolation, which is a standard approximation and formally weak below ~10 mM, so treat the bottom two rows as ±5 °C. It is enough to make one point: **the water rinse is not a mild step for a duplex.** At 22 °C in ultrapure water the margin is about **11 °C**; in ice-cold water it is about **29 °C**. That is why the final rinse before drying is either 0.15–0.3 M ammonium acetate (volatile, keeps ionic strength, leaves no crystals) or **ice-cold water for 5–10 s per exchange**, and never room-temperature water at leisure.
 
 In 1× PBS the perfectly matched duplex melts at about **86 °C**, so a 90 °C hold melts it completely and cooling back through 86 °C is what re-forms it — specifically, and only where the match is full-length.
 
@@ -157,6 +162,12 @@ In 1× PBS the perfectly matched duplex melts at about **86 °C**, so a 90 °C h
 2. **One stringent wash: 500 µL 1× PBS at 45 °C for 5 min.** This is ~40 °C below Tm, so a full-length duplex is untouched; it removes complement that is stuck by adsorption or by a partial match. This is the wash that separates "hybridized" from "smeared on".
 3. **2 × 500 µL 1× PBS at room temperature.**
 4. **Do not water-rinse and do not dry the chip before imaging.** There is no salt artifact to remove if the chip stays wet, drying concentrates buffer at the perimeter into exactly the crystalline ring that ruins a micrograph, and fluorescein is dimmer as the pH drops. Image in PBS.
+
+**If a dry step is required — AFM, or storage — the rinse before it is the one place in this protocol where low salt is dangerous, and there is a sequencing rule that nearly removes the risk:**
+
+- **Drying an unhybridized chip is close to free.** A single-stranded tether has no duplex to melt, so water at room temperature costs only base–carpet contacts, which is the weak effect. Rinse in water, N₂ dry, desiccator, and hybridize later.
+- **Never water-rinse after hybridization at room temperature.** The duplex exists, and water puts Tm in the 30s. Use ammonium acetate, or ice-cold water fast.
+- The 45 °C stringency wash stays in **1× PBS**. In water it would be ~12 °C from this duplex's Tm and would strip the layer it is meant to certify.
 
 ## 4. Image
 
