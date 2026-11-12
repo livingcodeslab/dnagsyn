@@ -159,3 +159,4 @@ Open questions worth naming rather than assuming:
 
 - Quenching determines what the fluorescence channel can and cannot claim: [hybridization protocol, "Where the dye ends up matters"](../protocols/2026-11-11-fluor-tgtaatc-hybridization.md).
 - Drying determines how much of the layer is accessible at all: [attachment protocol, "Endpoint and record"](../protocols/2026-11-05-amino-gattaca-pbase-graphene.md) and the [rinse record](../protocols/2026-11-11-water-rinse-and-dino-lite-imaging.md).
+- What other people do about storage, and which layer tolerates it: [dry storage and rehydration](2026-11-12-dry-storage-and-rehydration.md).
