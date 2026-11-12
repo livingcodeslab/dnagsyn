@@ -93,16 +93,27 @@ The sheet records the concentration but not the volume, and the volume follows f
 | Annotated concentration | **100 µM** |
 | Volume implied | 19.752 nmol ÷ 100 µM = **197.5 µL** |
 
-**This explains the difference between the three tubes.** All three oligos were intended at **100 µM**. Line 1 (26.9 nmol) needed 269 µL for that and line 3 (20.3 nmol) needed 203 µL; both were then topped up to **1 mL**, which is what produced the 26.9 µM and 20.3 µM concentrations written on those two sheets — dilutions of 3.7× and 4.9×. Line 2 was left undiluted at 100 µM, and only the concentration was written beside it. So the annotation is correct as it stands, and the missing volume is missing because this is the one tube that was never diluted.
+**What the three tubes actually record.** The two amino oligos were resuspended in **1 mL** and annotated with the concentration that gives — 26.9 nmol/mL = **26.9 µM** and 20.3 nmol/mL = **20.3 µM**. The 1 mL was volume chosen first, before the yield was accounted for, and the concentration then followed from it; it is not a dilution step and there is no evidence of a deliberate 100 µM intermediate. Line 2 is the outlier: it carries **100 µM and no volume**, and 100 µM is not what 1 mL would give — the same 1 mL in this tube is **19.752 µM**.
 
-What the paperwork still cannot establish is whether ≈197.5 µL is what is in the tube today. The solvent (water or PBS) and the reconstitution date were never recorded, and the oligo was manufactured 5/30/2024, so evaporation or loss is possible. Measure the volume, then A₂₆₀ and A₄₉₅ as specified in the [hybridization protocol](../../../protocols/2026-11-11-fluor-tgtaatc-hybridization.md).
+So there are two accounts, and they are mutually exclusive:
 
-| Check | Expected if the tube holds 197.5 µL at 100 µM |
-| --- | --- |
-| Volume | 195–205 µL |
-| A₂₆₀ of a 200-fold dilution | ≈ 0.29 |
-| A₄₉₅/A₂₆₀ | ≈ 0.12 (one intact fluorescein per 50-mer) |
-| Working solution | 5.0 µL into 495 µL 1× PBS = 1.00 µM |
+| Account | Tube volume | Concentration | Draw for a 1 µM working solution |
+| --- | ---: | ---: | ---: |
+| **Annotated 100 µM is right** | **197.5 µL** | 100 µM | 5.0 µL into 495 µL |
+| **Resuspended in 1 mL like the others** | ~1 mL | **19.75 µM** | **25.3 µL** into 475 µL |
+
+Each is one measurement away: the volume in the tube decides it, and A₂₆₀ confirms it independently. A 200-fold dilution reads ≈ 0.29 at 100 µM or ≈ 0.057 at 19.75 µM. Both are still in excess of the surface sites (30–60× versus 6–12×), so hybridization is not jeopardized either way — but the draw volume differs five-fold, so the stock must be settled before the complement is aliquoted.
+
+The solvent (water or PBS) and the reconstitution date were never recorded either, and the oligo was manufactured 5/30/2024, so evaporation cannot be excluded on top of the two accounts above.
+
+| Check | If 197.5 µL at 100 µM | If ~1 mL at 19.75 µM |
+| --- | --- | --- |
+| Volume | 195–205 µL | ~1 mL |
+| A₂₆₀ of a 200-fold dilution | ≈ 0.29 | ≈ 0.057 |
+| A₄₉₅/A₂₆₀ | ≈ 0.12 | ≈ 0.12 (one intact fluorescein per 50-mer either way) |
+| Working solution for 1 µM | 5.0 µL into 495 µL | 25.3 µL into 475 µL |
+
+Record the reading here when it is taken, and see the [hybridization protocol](../../../protocols/2026-11-11-fluor-tgtaatc-hybridization.md) for the dilution procedure.
 
 ## Source
 
