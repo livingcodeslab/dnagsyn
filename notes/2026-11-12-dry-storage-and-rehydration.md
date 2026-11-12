@@ -6,11 +6,32 @@
 
 Companion note: [fluorescence quenching and drying](2026-11-12-fluorescence-quenching-and-drying.md) covers *why* drying pins the DNA layer. This note covers *what other people do*, how much of it the composite tolerates, and how to organise a multi-day workflow.
 
+## The system these notes describe
+
+```text
+graphene  →  pyrene (π-stacked)  →  C₃H₆–CO–NH  →  5′ end of the 50 nt strand
+             PBASE, 1.15 nm SAM                  amide bond (covalent)
+```
+
+**There is no DNA on the graphene.** The DNA is attached to PBASE, and PBASE is π-stacked on the graphene; the strand never presents a base to the basal plane. Every layer statement below is about that stack, and every citation is labelled by which of these it actually measured:
+
+| Class | What was measured | Transfers to us? |
+| --- | --- | --- |
+| **A** | DNA or nucleobases **adsorbed directly on carbon** (graphene, graphite, HOPG, GO) | **Upper bound only** — no route to the basal plane in our stack |
+| **B** | DNA **covalently tethered through PBASE** to graphene | **Directly** — our chemistry |
+| **C** | DNA **brushes on other SAMs** (e.g. thiol-DNA on gold) | **Probably the closest analogue; not yet reviewed** |
+
+The class definitions, and why they matter, are set out in the [companion note](2026-11-12-fluorescence-quenching-and-drying.md#what-the-system-is-and-what-the-citations-measured).
+
+## Correction (2026-11-12)
+
+The first version of this note conflated those three classes: it imported class-A adsorption energies and class-A structural results (graphene–mica melting DNA origami, HOPG humidity effects, GO displacement sensors) as if they described a PBASE-tethered strand, then concluded more definitively than the evidence allows that dry/wet cycling degrades hybridization. The stack has since been stated explicitly at the top, the transferred claims are labelled in place, and the strength of the cycling claim has been downgraded. **The assumption that a PBASE-tethered strand pins on drying is untested, and it is the load-bearing assumption in the recommendation to avoid drying.**
+
 ---
 
 ## Short answer
 
-**Drying is legitimate and is the manufacturer's own storage recommendation — but the fragile part is not the graphene.** It is the non-covalent pyrene/DNA interface, and that interface loses something (`~30%` of attached DNA in the one quantitative QCM study, plus a dried-in flattening) that plain rehydration does not return. The chip will still look perfect by AFM height and by Dirac point afterwards.
+**Drying is legitimate and is the manufacturer's own storage recommendation — but the fragile part is not the graphene, and it is not the DNA's contact with graphene either.** It is the non-covalent pyrene anchor and whatever contact the strand makes with the **carpet**, not the basal plane. In the one quantitative study of our exact chemistry (class B: PBSE + amine-DNA + ethanolamine on graphene) ~30% of the attached DNA is lost — but to **buffer rinsing during functionalization**, not to drying, so it is a floor on attachment yield rather than a drying penalty. What drying itself costs is a flattening that plain rehydration may not return, and how much of that applies to a carpet-tethered brush rather than a graphene-adsorbed one is **not established** (see the correction above).
 
 The useful reframe: **water does more good than harm to this composite, and desiccation is a logistics tool, not a preservation one.** For multi-day gaps, a wet chip at 4 °C is both easier and less damaging than a dry chip in a desiccator. Dry it when an instrument demands dry — AFM — and put that step last.
 
@@ -55,11 +76,11 @@ The cost is confined to one layer, but that layer is the one the experiment depe
 
 | Layer | Binding / behaviour | Evidence |
 | --- | --- | --- |
-| **Pyrene → graphene (PBASE)** | Strongly adsorbed, effectively permanently: adsorption energy **−1.63 eV** (chains lying down) or **−1.28 eV** (chains standing), of which the pyrene contributes **−0.88 eV**. Barrier between the two conformations only **0.20 eV**, so the chain is mobile at room temperature. | DFT + 3D-RISM, Oishi et al. 2022 |
-| **Linker conformation** | **Dry favours "lying down"; water favours "standing up."** Hydration lowers the energy of the standing conformation relative to lying down (ΔE 0.35 → 0.28 eV), and the authors conclude the standing conformation "appears more frequently in a solution in comparison to that under vacuum conditions." | Oishi et al. 2022 |
-| **DNA on the linker** | **~30% of the DNA that adsorbs is lost to running-buffer rinsing** (weakly attached fraction); of what remains, **up to 26% is nonspecific**; ethanolamine blocking of unreacted NHS measured at **~80% efficiency**. PBASE gives the highest probe density of the three linkers compared (pyrene > acridine > fluorenyl). | QCM-D, Domingues et al. 2025 |
+| **PBASE** | Class **B**. Strongly adsorbed, effectively permanently: adsorption energy **−1.63 eV** (chains lying down) or **−1.28 eV** (chains standing), of which the pyrene contributes **−0.88 eV**. Barrier between the two conformations only **0.20 eV**, so the chain is mobile at room temperature. | DFT + 3D-RISM, Oishi et al. 2022 |
+| **Linker conformation** | Class **B** (theory). **Dry favours "lying down"; water favours "standing up."** Hydration lowers the energy of the standing conformation relative to lying down (ΔE 0.35 → 0.28 eV), and the authors conclude the standing conformation "appears more frequently in a solution in comparison to that under vacuum conditions." | Oishi et al. 2022 |
+| **DNA on the linker** | Class **B** — our chemistry. **~30% of the DNA that adsorbs is lost to running-buffer rinsing** (the weakly attached fraction; a rinse loss, not a drying loss); of what remains, **up to 26% is nonspecific**; ethanolamine blocking of unreacted NHS measured at **~80% efficiency**. PBASE gives the highest probe density of the three linkers compared (pyrene > acridine > fluorenyl). | QCM-D, Domingues et al. 2025 |
 | **PBASE layer integrity** | Long PBASE soaks over-build: 4 h at 50 mM in DMF was optimal, and longer incubations aggregate pyrene into a bilayer-like structure. Aggregation is not reversed by rinsing. | reviewed in Mishyn et al. 2022 |
-| **DNA conformation (dry)** | Graphene surfaces are not passive towards adsorbed DNA: layered graphene–mica **melts DNA origami on contact**. On HOPG, ambient humidity changes the measured height of DNA, i.e. hydration state changes conformation — and dry AFM heights are therefore a function of RH. | Pham et al. 2018; Zhou et al. 2007 |
+| **DNA conformation (dry)** | Class **A** only — used as a warning, not a prediction. Graphene surfaces are not passive towards **adsorbed** DNA: layered graphene–mica **melts DNA origami on contact**. On HOPG, ambient humidity changes the measured height of DNA, so dry AFM heights are a function of RH. Neither was measured on a PBASE-tethered brush, which cannot make the same flat contact. | Pham et al. 2018; Zhou et al. 2007 |
 | **Duplex** | Stable dry. The risk is not drying but the low-ionic-strength rinse used before drying. | see companion note |
 | **Graphene** | The robust layer. Degrades by doping and hysteresis, not by drying, provided no plasma, sonication or oxidiser. | Graphenea protocol |
 
@@ -73,16 +94,30 @@ The cost is confined to one layer, but that layer is the one the experiment depe
 
 **Does not recover:**
 
-- The **base–surface pinning** created by drying. Rehydration restores the solvent; nothing in it lifts a base that is π-stacked on an aromatic surface (adhesion of 3–15 kT per base, tens to hundreds of kT for a contact patch). See [the companion note](2026-11-12-fluorescence-quenching-and-drying.md).
-- **Pyrene aggregation**, if it has happened.
+- **Base–carpet pinning** created by drying — with the caveat that this whole mechanism is imported from class-A systems and has never been measured on a PBASE monolayer. Rehydration restores the solvent, and nothing in it lifts a base that is π-stacked onto an aromatic face; whether our bases stack hard enough to matter is the open question. See [the companion note](2026-11-12-fluorescence-quenching-and-drying.md#how-much-of-this-transfers-to-a-pbase-tethered-strand).
+- **Pyrene aggregation**, if it has happened — a class-B concern, from PBASE layer formation rather than from drying.
 - Anything **adsorbed from air** while it sat.
-- The **~30% weakly attached DNA** — though that fraction went during the rinse, not the drying.
+- The **~30% weakly attached DNA** — although that fraction went during the rinse, not the drying.
 
 ## The uncomfortable consequence
 
-**Each dry/wet cycle degrades exactly the property the experiment measures** — hybridization competence and upright duplex geometry — while leaving intact the two properties you are most likely to check: AFM height (a flattened layer still has height) and Dirac point (the electrical baseline recovers). The damage is invisible to both of those readouts and visible only in the FAM signal that the cycles exist to obtain.
+**Each dry/wet cycle is expected to degrade exactly the property the experiment measures** — hybridization competence and upright duplex geometry — while leaving intact the two properties you are most likely to check: AFM height (a flattened layer still has height) and Dirac point (the electrical baseline recovers). The damage, if it occurs, is invisible to both of those readouts and visible only in the FAM signal that the cycles exist to obtain. **That is a prediction from the class-A mechanism, not a measurement of our stack** (see the correction at the top); the cycle-series experiment below is how it becomes a fact or not.
 
 So the cycle count becomes a covariate in every result. Record it per chip.
+
+## Is a wet chip at 4 °C actually safe for the DNA?
+
+Yes, and this is class-C-adjacent rather than class-A: DNA monolayers (thiol-DNA on gold) are routinely held in buffer for days to weeks, and 1× PBS with 0.02% sodium azide at 4 °C is the standard holding condition. Our attachment is covalent, so nothing leaves. What a wet hold does *not* protect against is the studies in this list that found DNA desorbing on prolonged buffer contact — those are all class-A (adsorbed) systems, where the strand is held only by base contact and can only come off.
+
+## Correction to the storage recommendation confidence
+
+With the classes separated, the recommendation "store wet at 4 °C for multi-day gaps, dry only for AFM" rests on:
+
+- **solid**: the manufacturer's own low-humidity recommendation is about doping and hysteresis, and the doping treatment is not needed for liquid gating (class: manufacturer guidance);
+- **solid**: PBASE itself does not come off (−1.28 to −1.63 eV), and the linker's standing conformation is *favoured* by water;
+- **assumption**: that drying costs a PBASE-tethered strand much of anything. Unmeasured.
+
+If that last assumption is wrong, drying is close to free and the plan can be structured purely around logistics. Worth testing rather than arguing.
 
 ## Recommended practice for a multi-day workflow
 
@@ -118,7 +153,7 @@ That last distinction is the useful one: it says whether to fix the rinse (mater
 | PBASE does not desorb under normal handling | high | DFT adsorption energy −1.28 to −1.63 eV |
 | Water favours the standing linker conformation; vacuum favours lying down | high (theory) | DFT + 3D-RISM; explicitly a claim about conformational populations, not measured directly |
 | ~30% of attached DNA is lost to buffer rinsing | medium-high | one QCM-D study, different graphene transfer and flow format from ours |
-| Dry/wet cycling monotonically degrades hybridization | **medium — inferred** | from the pinning mechanism plus the agglomeration/origami evidence; not measured on our composite |
+| Dry/wet cycling degrades hybridization on **our** stack | **low-medium — assumption** | inferred by analogy from class-A pinning plus adsorption irreversibility; no measurement on a PBASE-tethered brush; the carpet is a heterogeneous organic layer with shorter possible contact patches |
 | Trehalose/sucrose rinse improves dry storage of a DNA brush | **low-medium** | standard practice for dried biomolecules; no graphene-DNA-specific study found |
 | Commercial desiccated DNA-graphene sensors use a stabiliser | low | conference abstract describing a proprietary additive, no data |
 
