@@ -50,7 +50,7 @@ A full-length complement is strictly better than a truncated one here: 33 bp of 
 
 Caveat on readout: the fluorescent strand is the complement, fixed at **33 nt** no matter how much TdT added. Under denaturing CE the label reports *how much* was released, not *how long* the products are. Use it as a release-efficiency/quantitation control and get length distributions from nanopore sequencing (or non-denaturing CE, where mobility tracks total length).
 
-The stock is hand-annotated 100 µM with no reconstitution volume recorded, so remeasure before use.
+The stock is hand-annotated 100 µM; the volume was never written on the sheet but follows from its printed quantity — 19.752 nmol ÷ 100 µM = **197.5 µL**, and it is the only one of the three oligos that was not diluted to 1 mL. Confirm the volume and A₂₆₀ before use.
 
 ## Single-strand activity of these sites
 

@@ -19,7 +19,7 @@ Prerequisite: [attachment and blocking](2026-11-05-amino-gattaca-pbase-graphene.
 | | Sequence (5′→3′) | Ends | Source |
 | --- | --- | --- | --- |
 | **amino-gattaca** (template, on surface) | `GATTACACAGGCAAGCTTAGGATGTAGGTCTTAACTCGTCTCTGGTCTCA` | 5′ **amine → PBASE**, 3′ **free OH** | 515766H05, 26.9 µM |
-| **fluor-tgtaatc** (complement, in solution) | `TGAGACCAGAGACGAGTTAAGACCTACATCCTAAGCTTGCCTGTGTAATC` | 5′ **fluorescein**, 3′ free OH | 515677F09, 100 µM annotated |
+| **fluor-tgtaatc** (complement, in solution) | `TGAGACCAGAGACGAGTTAAGACCTACATCCTAAGCTTGCCTGTGTAATC` | 5′ **fluorescein**, 3′ free OH | 515677F09, **100 µM in 197.5 µL** |
 
 50 nt each, 46% GC, PAGE purified, exact reverse complements — a **blunt 50 bp duplex** with no overhangs.
 
@@ -33,7 +33,7 @@ Where the dye ends up matters for whether it can be seen:
 
 | Reagent | Stock | Working |
 | --- | --- | --- |
-| fluor-tgtaatc | 100 µM (handwritten; **remeasure**) | **1 µM in 1× PBS** |
+| fluor-tgtaatc | **100 µM in 197.5 µL** (derived; confirm volume) | **1 µM in 1× PBS** |
 | 1× PBS, pH 7.4 | — | anneal buffer and all washes |
 | ultrapure water | — | only if going on to an enzymatic step |
 
@@ -41,7 +41,7 @@ Where the dye ends up matters for whether it can be seen:
 
 ### Check the complement stock before you use it
 
-The certificate records **19.7 nmol** and the tube is hand-annotated **100 µM with no reconstitution volume** — the annotation has never been verified, and the oligo was made in May 2024. Two readings on 5 µL into 995 µL of 1× PBS (200-fold), blanked against the same buffer:
+The certificate records **19.752 nmol** (11.47 OD ÷ 580.7 OD/µmol) and the tube is annotated **100 µM**, which fixes the reconstitution volume at **197.5 µL**. The volume was never written on the sheet, but it follows from the sheet's own two numbers: this is the only one of the three oligos that was not diluted to 1 mL (the other two were made up at 100 µM and then topped up, giving 26.9 µM and 20.3 µM) — see [the line-2 report](../reports/invitrogen/12091076/02-fluor-tgtaatc.md). The annotation is therefore consistent, but it is still an annotation: the solvent and date were not recorded and the oligo was made in May 2024. Two readings on 5 µL into 995 µL of 1× PBS (200-fold), blanked against the same buffer:
 
 | Reading | If the tube really is 100 µM | Interpretation |
 | --- | --- | --- |
@@ -51,7 +51,7 @@ The certificate records **19.7 nmol** and the tube is hand-annotated **100 µM w
 
 A ratio near 0.12 says the dye is intact and attached; near zero says the labelling is gone or bleached, and no amount of washing will produce a signal. A₂₆₀ gives the concentration. Adjust the dilution to hit 1 µM rather than trusting the label.
 
-If the tube is dry, dissolve the 19.7 nmol in **197 µL** of ultrapure water or 1× PBS for 100 µM; if it is already in solution, measure as above.
+The tube should hold **≈197.5 µL** rather than being dry. Measure the volume first — it is the cheapest of the three checks, and 195–205 µL confirms the reconstitution. If the tube turns out to be dry instead, dissolve the **19.752 nmol in 197.5 µL** of ultrapure water or 1× PBS for 100 µM. If it holds some other volume, that volume is the measurement and the concentration follows from 19.752 nmol ÷ V: 150 µL means 132 µM, 790 µL means 25 µM (the tube then took the same dilution as the other two). Adjust the working-solution draw rather than trusting the label.
 
 ### Working solution
 

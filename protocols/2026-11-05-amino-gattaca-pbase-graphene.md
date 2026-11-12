@@ -42,7 +42,7 @@ All three oligos are from Invitrogen order **12091076** (PO 4500063351, cat. 103
 | Reagent | Identity | Stock | Certificate |
 | --- | --- | --- | --- |
 | **amino-gattaca** | 5′ amine, 515766H05 | 26.9 nmol in 1 mL = **26.9 µM** (handwritten) | [COA](../reports/invitrogen/12091076/01-amino-gattaca.md) |
-| fluor-tgtaatc | 5′ fluoroscein, 515677F09 | 100 µM (handwritten, no volume recorded — remeasure) | [COA](../reports/invitrogen/12091076/02-fluor-tgtaatc.md) |
+| fluor-tgtaatc | 5′ fluoroscein, 515677F09 | **100 µM in 197.5 µL** (19.752 nmol; volume derived, confirm before use) | [COA](../reports/invitrogen/12091076/02-fluor-tgtaatc.md) |
 | amino-gattaca-biotin | 5′ amine, 3′ biotin, 516489A01 | 20.3 nmol in 1 mL | [COA](../reports/invitrogen/12091076/03-amino-gattaca-biotin.md) |
 | **ethanolamine** | Thermo **149582500**, 99%, MW 61.08, density 1.012 g/mL | 250 mL neat | product spec |
 
