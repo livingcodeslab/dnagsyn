@@ -133,9 +133,9 @@ The chip has just been through six water exchanges and may be dry. **Hybridizati
 | printed certificate | 1 M | **101 °C** |
 | 1× PBS | 137 mM | **≈ 86 °C** |
 | printed certificate | 50 mM | **79 °C** |
-| 10 mM | **≈ 67 °C** | |
-| 1 mM | **≈ 50 °C** | |
-| ultrapure water | ~0.1 mM | **≈ 33 °C** |
+| interpolated | 10 mM | **≈ 67 °C** |
+| interpolated | 1 mM | **≈ 50 °C** |
+| interpolated | ultrapure water, ~0.1 mM | **≈ 33 °C** |
 
 The 1 M and 50 mM points are printed and give **~17 °C per decade of [Na⁺]**; every other row is that interpolation, which is a standard approximation and formally weak below ~10 mM, so treat the bottom two rows as ±5 °C. It is enough to make one point: **the water rinse is not a mild step for a duplex.** At 22 °C in ultrapure water the margin is about **11 °C**; in ice-cold water it is about **29 °C**. That is why the final rinse before drying is either 0.15–0.3 M ammonium acetate (volatile, keeps ionic strength, leaves no crystals) or **ice-cold water for 5–10 s per exchange**, and never room-temperature water at leisure.
 
